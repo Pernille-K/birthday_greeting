@@ -1,0 +1,97 @@
+body {
+  background-color: lightgreen;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  max-width: 90%;
+  text-align: center;
+}
+
+#congrats {
+  font-size: 64px;
+  font-weight: 800;
+  color: blue;
+  margin: 2vh;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#congrats:hover {
+  color: #ff6347;
+}
+
+p {
+  margin: 0;
+}
+
+.balloon {
+  max-height: 28vh;
+  position: absolute;
+  bottom: var(--bottom-height, 2vh);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.hover-animation {
+  animation: hover var(--hover-duration, 2s) infinite;
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--hover-height, -20px));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: floatUp 1s forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+  /* 100% {
+    transform: translateY(0);
+    opacity: 1;
+  } */
+}
+
+#balloon-container {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 25vh;
+  left: 5vw;
+  background-color: lightblue;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
