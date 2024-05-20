@@ -63,13 +63,18 @@ p {
 }
 
 .float-animation {
-  animation: floatUp 1s forwards;
+  animation: floatUp 2.5s forwards;
 }
 
 @keyframes floatUp {
   0% {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  50% {
+    transform:(translateY(-40vh));
+    opacity: 0.8;
   }
 
   100% {
