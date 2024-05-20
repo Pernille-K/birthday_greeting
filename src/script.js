@@ -64,7 +64,7 @@ function populateBalloons() {
   var containerWidth = 90;
   var numberOfBalloons = 25;
   var balloonWidth = 5;
-  var spreadBalloons = 20;
+  var spreadBalloons = 13;
 
   var roomForEachBalloon =
     (containerWidth - balloonWidth * spreadBalloons) / (spreadBalloons + 1);
