@@ -79,19 +79,59 @@ function textOnCreatedClouds(cloud) {
     var cloud1AudioContainer = document.getElementById(
       "cloud1-audio-container"
     );
-    cloud1AudioContainer.insertBefore(cloudImg, cloud1AudioContainer.firstChild);
- } else {
+    cloud1AudioContainer.insertBefore(
+      cloudImg,
+      cloud1AudioContainer.firstChild
+    );
+  } else {
     var contentContainer = document.querySelector(".content");
     contentContainer.insertBefore(cloudImg, contentContainer.firstChild);
   }
 }
 
+let balloonCounter = 0;
+let numberElement = null;
+let isBalloonFloating = false;
 
 function flyBalloon() {
   var balloon = this;
+
+  if (isBalloonFloating) {
+    return;
+  }
+
+  isBalloonFloating = true;
+
   balloon.classList.remove("hover-animation");
   balloon.classList.add("float-animation");
   // newBalloonInPlace(balloon);
+
+  balloon.addEventListener("animationend", function (event) {
+    if (event.animationName == "floatUp") {
+      balloon.remove();
+      isBalloonFloating = false;
+    }
+  });
+  balloonCounter++;
+  displayNumber(balloonCounter);
+}
+
+function displayNumber(balloonCounter) {
+  if (!numberElement) {
+    numberElement = document.createElement("p");
+    glitterImg = document.createElement("img");
+    glitterImg.src = "/img/glitterrays.png";
+    numberElement.classList.add("number-appears");
+    numberElement.classList.add("glittering-number-animation");
+
+    glitterImg.classList.add("glitter");
+    glitterImg.classList.add("glittering-animation");
+
+    var contentContainer = document.querySelector(".content");
+    contentContainer.appendChild(numberElement);
+    contentContainer.appendChild(glitterImg);
+  }
+  numberElement.textContent = `${balloonCounter}`;
 }
 
 // function newBalloonInPlace(oldBalloon) {
