@@ -7,7 +7,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
   </head>
   <body>
-    <div class="container">
+     <div id="merrywrap" class="merrywrap">
+      <div class="giftbox">
+        <div class="cover">
+          <div></div>
+        </div>
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <div class="container" style="display: none;">
       <div class="content">
         <header>
           <h1
@@ -18,8 +27,8 @@
             Gratulerer med dagen!
           </h1>
           <p>Nå er du gammel</p>
+          
         </header>
-        <!-- <a>Play a game</a> -->
         <audio id="myAudio">
           <source src="birthday_song.mp3" type="audio/mp3" />
           Spill Bursdagssang
@@ -28,12 +37,6 @@
         <img id="pauseIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/pause_button.png"></img>
       </div>
       <div id="balloon-container"></div>
-      <img
-        id="balloon-image"
-        src="/img/red_balloon.png"
-        alt="Balloon"
-        style="display: none"
-      />
     </div>
     <script src="/src/script.js"></script>
   </body>

@@ -1,3 +1,41 @@
+window.onload = function () {
+  var merrywrap = document.getElementById("merrywrap");
+  var box = merrywrap.getElementsByClassName("giftbox")[0];
+  var step = 1;
+  var stepMinutes = [1500, 1500, 750, 750];
+
+  function init() {
+    box.addEventListener("click", openBox, false);
+  }
+
+  function stepClass(step) {
+    merrywrap.className = "merrywrap";
+    merrywrap.className = "merrywrap step-" + step;
+  }
+
+  function openBox() {
+    if (step === 1) {
+      box.removeEventListener("click", openBox, false);
+    }
+
+    stepClass(step);
+
+    if (step === 3) {
+    }
+
+    if (step === 4) {
+      document.querySelector(".container").style.display = "flex";
+      merrywrap.style.display = "none";
+      return;
+    }
+
+    setTimeout(openBox, stepMinutes[step - 1]);
+    step++;
+  }
+
+  init();
+};
+
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
 var pauseIcon = document.getElementById("pauseIcon");
