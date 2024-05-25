@@ -74,29 +74,34 @@ p {
 }
 
 .float-animation {
-  animation: floatUp 2.5s forwards;
+  animation: floatUp 2s forwards linear;
 }
 
 @keyframes floatUp {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(-25vh) translateX(-1vh) (-3deg);
     opacity: 1;
   }
 
   50% {
-    transform: (translateY(-40vh));
+    transform: translateY(-50vh) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(-75vh) translateX(1vh) rotate(3deg);
     opacity: 0.8;
   }
 
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(-100vh) translateX(0vh) rotate(0deg);
     opacity: 0;
   }
-
-  /* 100% {
-    transform: translateY(0);
-    opacity: 1;
-  } */
 }
 
 #balloon-container {
