@@ -1,40 +1,40 @@
-window.onload = function () {
-  var merrywrap = document.getElementById("merrywrap");
-  var box = merrywrap.getElementsByClassName("giftbox")[0];
-  var step = 1;
-  var stepMinutes = [1500, 1500, 750, 750];
+// window.onload = function () {
+//   var merrywrap = document.getElementById("merrywrap");
+//   var box = merrywrap.getElementsByClassName("giftbox")[0];
+//   var step = 1;
+//   var stepMinutes = [1500, 1500, 750, 750];
 
-  function init() {
-    box.addEventListener("click", openBox, false);
-  }
+//   function init() {
+//     box.addEventListener("click", openBox, false);
+//   }
 
-  function stepClass(step) {
-    merrywrap.className = "merrywrap";
-    merrywrap.className = "merrywrap step-" + step;
-  }
+//   function stepClass(step) {
+//     merrywrap.className = "merrywrap";
+//     merrywrap.className = "merrywrap step-" + step;
+//   }
 
-  function openBox() {
-    if (step === 1) {
-      box.removeEventListener("click", openBox, false);
-    }
+//   function openBox() {
+//     if (step === 1) {
+//       box.removeEventListener("click", openBox, false);
+//     }
 
-    stepClass(step);
+//     stepClass(step);
 
-    if (step === 3) {
-    }
+//     if (step === 3) {
+//     }
 
-    if (step === 4) {
-      document.querySelector(".container").style.display = "flex";
-      merrywrap.style.display = "none";
-      return;
-    }
+//     if (step === 4) {
+//       document.querySelector(".container").style.display = "flex";
+//       merrywrap.style.display = "none";
+//       return;
+//     }
 
-    setTimeout(openBox, stepMinutes[step - 1]);
-    step++;
-  }
+//     setTimeout(openBox, stepMinutes[step - 1]);
+//     step++;
+//   }
 
-  init();
-};
+//   init();
+// };
 
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
@@ -67,6 +67,25 @@ function triggerConfetti() {
     origin: { y: 0.6 },
   });
 }
+
+function textOnCreatedClouds(cloud) {
+  var cloudImg = document.createElement("img");
+  // cloudImg.classList.add("cloud-img");
+  cloudImg.classList.add(`${cloud}`);
+
+  cloudImg.src = `/img/${cloud}.png`;
+
+  if (cloud == "cloud1") {
+    var cloud1AudioContainer = document.getElementById(
+      "cloud1-audio-container"
+    );
+    cloud1AudioContainer.insertBefore(cloudImg, cloud1AudioContainer.firstChild);
+ } else {
+    var contentContainer = document.querySelector(".content");
+    contentContainer.insertBefore(cloudImg, contentContainer.firstChild);
+  }
+}
+
 
 function flyBalloon() {
   var balloon = this;
@@ -139,6 +158,11 @@ function populateBalloons() {
 }
 
 populateBalloons();
+textOnCreatedClouds("cloud1");
+textOnCreatedClouds("cloud2");
+textOnCreatedClouds("cloud3");
+textOnCreatedClouds("cloud4");
+textOnCreatedClouds("cloud5");
 
 // function populateBalloons() {
 //   var balloonContainer = document.getElementById("balloon-container");
