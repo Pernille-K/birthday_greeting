@@ -72,30 +72,30 @@ function flyBalloon() {
   var balloon = this;
   balloon.classList.remove("hover-animation");
   balloon.classList.add("float-animation");
-  newBalloonInPlace(balloon);
+  // newBalloonInPlace(balloon);
 }
 
-function newBalloonInPlace(oldBalloon) {
-  var balloonContainer = document.getElementById("balloon-container");
-  var balloonImage = document.getElementById("balloon-image");
+// function newBalloonInPlace(oldBalloon) {
+//   var balloonContainer = document.getElementById("balloon-container");
+//   var balloonImage = document.getElementById("balloon-image");
 
-  // Get the computed style of the old balloon
-  var oldBalloonStyle = window.getComputedStyle(oldBalloon);
-  var oldBalloonLeft = oldBalloonStyle.getPropertyValue("left");
+//   // Get the computed style of the old balloon
+//   var oldBalloonStyle = window.getComputedStyle(oldBalloon);
+//   var oldBalloonLeft = oldBalloonStyle.getPropertyValue("left");
 
-  setTimeout(function () {
-    var balloon = document.createElement("img");
-    balloon.classList.add("balloon");
-    balloon.classList.add("hover-animation");
-    balloon.addEventListener("click", flyBalloon);
-    balloon.src =
-      balloonSrcList[Math.floor(Math.random() * balloonSrcList.length)];
-    // Set the position of the new balloon
-    balloon.style.left = oldBalloonLeft;
+//   setTimeout(function () {
+//     var balloon = document.createElement("img");
+//     balloon.classList.add("balloon");
+//     balloon.classList.add("hover-animation");
+//     balloon.addEventListener("click", flyBalloon);
+//     balloon.src =
+//       balloonSrcList[Math.floor(Math.random() * balloonSrcList.length)];
+//     // Set the position of the new balloon
+//     balloon.style.left = oldBalloonLeft;
 
-    balloonContainer.appendChild(balloon);
-  }, 1500);
-}
+//     balloonContainer.appendChild(balloon);
+//   }, 1500);
+// }
 
 function populateBalloons() {
   var balloonContainer = document.getElementById("balloon-container");
@@ -112,7 +112,7 @@ function populateBalloons() {
   for (let i = 0; i < numberOfBalloons; i++) {
     var balloon = document.createElement("img");
     balloon.classList.add("balloon");
-    balloon.style.setProperty("--bottom-height", Math.random() * 2 + "vh");
+    balloon.style.setProperty("--bottom-height", Math.random() * 1.5 + "vh");
     balloon.classList.add("hover-animation");
     balloon.addEventListener("click", flyBalloon);
     balloon.src =

@@ -5,8 +5,13 @@
     <title>Hei hva er det som skjer</title>
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
+
+
+<body>
      <div id="merrywrap" class="merrywrap">
       <div class="giftbox">
         <div class="cover">
@@ -16,8 +21,8 @@
       </div>
     </div>
 
-    <div class="container" style="display: none;">
-      <div class="content">
+    <div class="container" style = "display: none;">
+      <div class="content" >
         <header>
           <h1
             id="congrats"
@@ -26,8 +31,9 @@
           >
             Gratulerer med dagen!
           </h1>
-          <p>Nå er du gammel</p>
-          
+
+          <!-- <p>Nå er du gammel</p> -->
+
         </header>
         <audio id="myAudio">
           <source src="birthday_song.mp3" type="audio/mp3" />
@@ -35,8 +41,11 @@
         </audio>
         <img id="playIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/play_button.png"></img>
         <img id="pauseIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/pause_button.png"></img>
+
       </div>
+
       <div id="balloon-container"></div>
+
     </div>
     <script src="/src/script.js"></script>
   </body>

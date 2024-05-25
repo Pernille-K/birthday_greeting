@@ -1,18 +1,21 @@
 body {
-  background-color: lightgreen;
+  background-color: #70cbdb;
   margin: 0;
   height: 100%;
   padding: 0;
 }
 
 .container {
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
   width: 100%;
   height: 100vh;
+  background-image: url(/img/background-even-smaller-flowers.png);
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
 }
 
 .content {
@@ -21,26 +24,34 @@ body {
 }
 
 #congrats {
-  font-size: 64px;
-  font-weight: 800;
-  color: blue;
-  margin: 2vh;
+  font-size: 9vh;
+  color: #2450ec;
+  padding-top: 15vh;
+  margin-bottom: 2vh;
   cursor: pointer;
   transition: color 0.3s;
+  /* font-family: "Sansita Swashed", system-ui; */
+  font-family: "Lobster Two", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #congrats:hover {
-  color: #ff6347;
+  color: #ff6600;
 }
 
 p {
   margin: 0;
+  margin-bottom: 3vh;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 3vh;
 }
 
 .balloon {
-  max-height: 28vh;
+  max-height: 35vh;
   position: absolute;
-  bottom: var(--bottom-height, 2vh);
+  bottom: var(--bottom-height);
   cursor: pointer;
   margin: 0;
   padding: 0;
@@ -94,7 +105,6 @@ p {
   width: 90%;
   height: 25vh;
   left: 5vw;
-  background-color: lightblue;
 }
 
 .cursorPointer {
@@ -125,7 +135,7 @@ body {
   bottom: 0;
   z-index: 10;
   & > div {
-    background: #34495e;
+    background: #e60000;
     position: absolute;
     &:after,
     &:before {
@@ -138,13 +148,15 @@ body {
   &:after {
     position: absolute;
     color: #fff;
+    font-weight: 500;
+    font-family: "Lobster Two", sans-serif;
     width: 100%;
-    content: "Click Me!";
+    content: "Klikk meg!";
     left: 0;
-    bottom: 0;
-    font-size: 24px;
+    bottom: 30%;
+    font-size: 6vh;
     text-align: center;
-    transform: rotate(-20deg);
+    transform: rotate(0deg);
     transform-origin: 0 0;
   }
 
@@ -160,7 +172,7 @@ body {
       left: 50%;
       width: 50px;
       transform: translateX(-50%);
-      background: #fdc56d;
+      background: #ffba39;
     }
 
     & > div {
@@ -178,7 +190,7 @@ body {
         width: 100%;
         height: 100%;
         content: "";
-        box-shadow: inset 0 0 0 15px #fdc56d;
+        box-shadow: inset 0 0 0 15px #ffba39;
         border-radius: 30px;
         transform-origin: 50% 100%;
       }
@@ -204,7 +216,7 @@ body {
       height: 100%;
       left: 50%;
       transform: translateX(-50%);
-      background: #fdc56d;
+      background: #ffba39;
     }
 
     &:after {
