@@ -119,18 +119,20 @@ function flyBalloon() {
     displayNumber(balloonCounter);
     setTimeout(function () {
       getAirplane();
-    }, 1500);
+    }, 1800);
   } else {
     displayNumber(balloonCounter);
   }
 }
 
 function openAirplane() {
+  this.remove();
   var paper = document.createElement("img");
   paper.src = "/img/paper.png";
   paper.classList.add("paper");
   paper.classList.add("paper-animation");
-  console.log("uæ");
+  var contentContainer = document.querySelector(".content");
+  contentContainer.appendChild(paper);
 }
 
 function getAirplane() {
@@ -151,9 +153,9 @@ function getAirplane() {
 
   setTimeout(function () {
     airplane.classList.add("airplane-animation");
-        airplane.addEventListener("click", openAirplane);
-  }, 800);
-
+    airplane.classList.add("cursorPointer");
+    airplane.addEventListener("click", openAirplane);
+  }, 1000);
 }
 
 function displayNumber(balloonCounter) {

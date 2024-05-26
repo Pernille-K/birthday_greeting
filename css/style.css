@@ -242,10 +242,9 @@ p {
 .paper-airplane {
   position: absolute;
   z-index: 10;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 20vh;
+  top: 38%;
+  left: 45%;
+  max-width: 10vw;
 }
 
 .airplane-animation {
@@ -257,8 +256,17 @@ p {
     transform: translateX(0) translateY(0);
   }
   100% {
-    transform: translateX(30vw) translateY(-13vh);
+    transform: translateX(34vw) translateY(-6vh);
   }
+}
+
+.paper {
+  position: absolute;
+  z-index: 15;
+  top: 32vh;
+  left: 80vw;
+  transform: translate(-50%, -50%);
+  max-width: 20vw;
 }
 
 .paper-animation {
@@ -271,19 +279,11 @@ p {
     max-width: 5vw;
   }
   100% {
-    transform: translateX(-40vw) translateY(50vh);
-    max-width: 60vw;
+    transform: translateX(-50vw) translateY(-20vh);
+    max-width: 40vw;
   }
 }
 
-.paper {
-  position: absolute;
-  z-index: 10;
-  top: 32vh;
-  left: 80vw;
-  transform: translate(-50%, -50%);
-  max-width: 20vw;
-}
 
 /* CodePen */
 
