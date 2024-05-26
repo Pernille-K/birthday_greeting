@@ -116,7 +116,7 @@ function flyBalloon() {
   balloonCounter++;
 
   if (balloonCounter == 2) {
-    displayNumber(balloonCounter)
+    displayNumber(balloonCounter);
     setTimeout(function () {
       getAirplane();
     }, 1500);
@@ -125,12 +125,20 @@ function flyBalloon() {
   }
 }
 
+function openAirplane() {
+  var paper = document.createElement("img");
+  paper.src = "/img/paper.png";
+  paper.classList.add("paper");
+  paper.classList.add("paper-animation");
+  console.log("uæ");
+}
+
 function getAirplane() {
   if (numberElement) {
     numberElement.remove();
   }
 
-  if(glitterImg) {
+  if (glitterImg) {
     glitterImg.remove();
   }
 
@@ -140,6 +148,12 @@ function getAirplane() {
 
   var contentContainer = document.querySelector(".content");
   contentContainer.appendChild(airplane);
+
+  setTimeout(function () {
+    airplane.classList.add("airplane-animation");
+        airplane.addEventListener("click", openAirplane);
+  }, 800);
+
 }
 
 function displayNumber(balloonCounter) {
@@ -156,7 +170,6 @@ function displayNumber(balloonCounter) {
     var contentContainer = document.querySelector(".content");
     contentContainer.appendChild(numberElement);
     contentContainer.appendChild(glitterImg);
-
   }
   numberElement.textContent = `${balloonCounter}`;
 }

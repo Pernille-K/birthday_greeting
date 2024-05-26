@@ -36,6 +36,7 @@ body {
   position: absolute;
   top: 17vh;
   left: 10vw;
+  z-index: 2;
 }
 
 .content {
@@ -48,6 +49,7 @@ body {
   position: absolute;
   top: 8vh;
   left: 4vw;
+  z-index: 1;
 }
 
 .cloud2 {
@@ -55,6 +57,7 @@ body {
   top: 3vh;
   position: absolute;
   left: 34vw;
+  z-index: 1;
 }
 
 .cloud3 {
@@ -70,6 +73,7 @@ body {
   top: 25vh;
   position: absolute;
   left: 76vw;
+  z-index: 1;
 }
 
 .cloud5 {
@@ -77,6 +81,7 @@ body {
   top: 8vh;
   position: absolute;
   left: 85vw;
+  z-index: 1;
 }
 
 #congrats {
@@ -113,6 +118,7 @@ p {
   cursor: pointer;
   margin: 0;
   padding: 0;
+  z-index: 20;
 }
 
 .hover-animation {
@@ -240,6 +246,43 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 20vh;
+}
+
+.airplane-animation {
+  animation: airplane 2s forwards ease-in-out;
+}
+
+@keyframes airplane {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(30vw) translateY(-13vh);
+  }
+}
+
+.paper-animation {
+  animation: paperScale 2s forwards ease-in-out;
+}
+
+@keyframes paperScale {
+  0% {
+    transform: translateX(0) translateY(0);
+    max-width: 5vw;
+  }
+  100% {
+    transform: translateX(-40vw) translateY(50vh);
+    max-width: 60vw;
+  }
+}
+
+.paper {
+  position: absolute;
+  z-index: 10;
+  top: 32vh;
+  left: 80vw;
+  transform: translate(-50%, -50%);
+  max-width: 20vw;
 }
 
 /* CodePen */
