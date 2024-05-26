@@ -188,7 +188,6 @@ p {
   animation: glitternumber 1s infinite ease-in-out;
 }
 
-
 @keyframes glitternumber {
   0% {
     font-size: 9vh;
@@ -232,6 +231,15 @@ p {
     opacity: 0.8;
     max-width: 21vh;
   }
+}
+
+.paper-airplane {
+  position: absolute;
+  z-index: 10;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 20vh;
 }
 
 /* CodePen */

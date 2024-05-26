@@ -112,8 +112,34 @@ function flyBalloon() {
       isBalloonFloating = false;
     }
   });
+
   balloonCounter++;
-  displayNumber(balloonCounter);
+
+  if (balloonCounter == 2) {
+    displayNumber(balloonCounter)
+    setTimeout(function () {
+      getAirplane();
+    }, 1500);
+  } else {
+    displayNumber(balloonCounter);
+  }
+}
+
+function getAirplane() {
+  if (numberElement) {
+    numberElement.remove();
+  }
+
+  if(glitterImg) {
+    glitterImg.remove();
+  }
+
+  var airplane = document.createElement("img");
+  airplane.src = "/img/paperplane.png";
+  airplane.classList.add("paper-airplane");
+
+  var contentContainer = document.querySelector(".content");
+  contentContainer.appendChild(airplane);
 }
 
 function displayNumber(balloonCounter) {
@@ -130,6 +156,7 @@ function displayNumber(balloonCounter) {
     var contentContainer = document.querySelector(".content");
     contentContainer.appendChild(numberElement);
     contentContainer.appendChild(glitterImg);
+
   }
   numberElement.textContent = `${balloonCounter}`;
 }
@@ -159,9 +186,9 @@ function displayNumber(balloonCounter) {
 function populateBalloons() {
   var balloonContainer = document.getElementById("balloon-container");
   var containerWidth = 90;
-  var numberOfBalloons = 25;
+  var numberOfBalloons = 2;
   var balloonWidth = 5;
-  var spreadBalloons = 13;
+  var spreadBalloons = 1;
 
   var roomForEachBalloon =
     (containerWidth - balloonWidth * spreadBalloons) / (spreadBalloons + 1);
