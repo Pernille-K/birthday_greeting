@@ -313,6 +313,7 @@ p {
   margin: 0;
   padding: 0;
   z-index: 20;
+  -webkit-user-drag: none;
 }
 
 .hover-animation {
