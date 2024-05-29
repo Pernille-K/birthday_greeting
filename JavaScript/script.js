@@ -34,6 +34,7 @@ window.onload = function () {
   }
 
   init();
+  let balloonCounter = 0;
 
   populateBalloons();
   textOnCreatedClouds("cloud1");
@@ -42,8 +43,6 @@ window.onload = function () {
   textOnCreatedClouds("cloud4");
   textOnCreatedClouds("cloud5");
 };
-
-let balloonCounter = 0;
 
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
