@@ -1,5 +1,3 @@
-let balloonCounter = 0;
-
 window.onload = function () {
   var merrywrap = document.getElementById("merrywrap");
   var box = merrywrap.getElementsByClassName("giftbox")[0];
@@ -36,14 +34,16 @@ window.onload = function () {
   }
 
   init();
-
-  populateBalloons();
-  textOnCreatedClouds("cloud1");
-  textOnCreatedClouds("cloud2");
-  textOnCreatedClouds("cloud3");
-  textOnCreatedClouds("cloud4");
-  textOnCreatedClouds("cloud5");
 };
+
+let balloonCounter = 0;
+
+populateBalloons();
+textOnCreatedClouds("cloud1");
+textOnCreatedClouds("cloud2");
+textOnCreatedClouds("cloud3");
+textOnCreatedClouds("cloud4");
+textOnCreatedClouds("cloud5");
 
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
