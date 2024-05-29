@@ -126,7 +126,7 @@ function flyBalloon() {
 
   balloonCounter++;
 
-  if (balloonCounter == 25) {
+  if (balloonCounter == 2) {
     displayNumber(balloonCounter);
     var balloonContainer = document.querySelector("#balloon-container");
     balloonContainer.classList.remove("balloon-sticker");
@@ -198,7 +198,7 @@ function getAirplane() {
     airplane.classList.add("cursorPointer");
 
     setTimeout(function () {
-      contentContainer.removeChild(airplane);
+      // contentContainer.removeChild(airplane);
 
       var airplaneContainer = document.createElement("div");
       airplaneContainer.classList.add("airplane-container");
@@ -208,15 +208,15 @@ function getAirplane() {
       );
 
       cloud4Container.appendChild(airplaneContainer);
-      var newAirplane = document.createElement("img");
-      newAirplane.src = "/img/paperplane.png";
+      // var newAirplane = document.createElement("img");
+      // newAirplane.src = "/img/paperplane.png";
 
-      airplaneContainer.appendChild(newAirplane);
+      // airplaneContainer.appendChild(newAirplane);
 
-      newAirplane.classList.add("airplane-cloud4");
+      // newAirplane.classList.add("airplane-cloud4");
       airplaneContainer.classList.add("airplane-sticker");
 
-      newAirplane.addEventListener("click", openAirplane);
+      airplane.addEventListener("click", openAirplane);
     }, 2000);
   }, 1000);
 }
