@@ -105,12 +105,14 @@ let isBalloonFloating = false;
 
 function flyBalloon() {
   var balloon = this;
+  balloon.removeEventListener("click", flyBalloon);
 
-  if (isBalloonFloating) {
-    return;
-  }
+  // if (isBalloonFloating) {
+  //   return;
+  // }
 
-  isBalloonFloating = true;
+  // isBalloonFloating = true;
+  balloon.style.pointerEvents = "none";
 
   balloon.classList.remove("hover-animation");
   balloon.classList.add("float-animation");
@@ -119,19 +121,19 @@ function flyBalloon() {
   balloon.addEventListener("animationend", function (event) {
     if (event.animationName == "floatUp") {
       balloon.remove();
-      isBalloonFloating = false;
+      // isBalloonFloating = false;
     }
   });
 
   balloonCounter++;
 
-  if (balloonCounter == 2) {
+  if (balloonCounter == 25) {
     displayNumber(balloonCounter);
     var balloonContainer = document.querySelector("#balloon-container");
     balloonContainer.classList.remove("balloon-sticker");
     setTimeout(function () {
       getAirplane();
-    }, 1200);
+    }, 1100);
   } else {
     displayNumber(balloonCounter);
   }
