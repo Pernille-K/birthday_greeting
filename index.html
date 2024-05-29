@@ -29,10 +29,12 @@
             <source src="birthday_song.mp3" type="audio/mp3" />
           </audio>
           <!-- <p id="audio-title">Spill bursdagssang</p> -->
-          <i id="playIcon" class="cursorPointer fa-solid fa-play" onclick="togglePlayPause()"></i>
-          <!-- <img id="playIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/play-solid.svg"></img> -->
-          <i class="fa-solid fa-pause cursorPointer" id="pauseIcon" onclick="togglePlayPause()"></i>
-          <!-- <img id="pauseIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/pause-solid.svg"></img> -->
+          <button type="button" id="playBtn" onclick="togglePlayPause()">          
+            <i id="playIcon" class="fa-solid fa-play" ></i>
+          </button>
+          <button type="button" id="pauseBtn" disabled onclick="togglePlayPause()">         
+             <i class="fa-solid fa-pause" id="pauseIcon"></i>
+          </button>
           </div>
         </div>
         <div id="cloud4-paper-airplane-container"></div>

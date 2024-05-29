@@ -39,6 +39,8 @@ window.onload = function () {
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
 var pauseIcon = document.getElementById("pauseIcon");
+var playBtn = document.getElementById("playBtn");
+var pauseBtn = document.getElementById("pauseBtn");
 
 var balloonSrcList = [
   "/img/red.png",
@@ -51,16 +53,16 @@ var balloonSrcList = [
 function togglePlayPause() {
   if (myAudio.paused) {
     myAudio.play();
-    playIcon.classList.remove("cursorPointer");
-    pauseIcon.classList.add("cursorPointer");
-    playIcon.style.color = "red";
-    pauseIcon.style.color = "black";
+    playBtn.disabled = true;
+    pauseBtn.disabled = false;
+    pauseIcon.style.color = "red";
+    playIcon.style.color = "#B7B7B7";
   } else {
     myAudio.pause();
-    pauseIcon.classList.remove("cursorPointer");
-    playIcon.classList.add("cursorPointer");
-    pauseIcon.style.color = "red";
-    playIcon.style.color = "black";
+    pauseBtn.disabled = true;
+    playBtn.disabled = false;
+    playIcon.style.color = "red";
+    pauseIcon.style.color = "#B7B7B7";
   }
 }
 
