@@ -20,23 +20,161 @@ body {
 
 #pauseIcon,
 #playIcon {
-  max-width: 6vh;
+  font-size: 2.5rem;
+  margin-top: 3vh;
+  padding: 0;
 }
 
-#audio-title {
+#playIcon {
+  margin-right: 1rem;
+}
+
+/* #audio-title {
   color: rgb(0, 0, 0);
   font-size: 3vh;
   text-align: center;
   margin: 0;
   margin-bottom: 2vh;
   padding: 0;
+} */
+
+#cloud1-audio-container {
+  position: relative;
+  max-width: 25vw;
+  max-height: 30vh;
+  top: 8vh;
+  left: -30vw;
+}
+
+#audio-container::before {
+  content: "Spill bursdagssang";
+  font-family: "Open Sans";
+  position: absolute;
+  top: -60%;
+  left: -110%;
+  background-color: #31d650;
+  font-size: 0.9rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+  color: white;
+  z-index: 50;
 }
 
 #audio-container {
   position: absolute;
-  top: 17vh;
-  left: 10vw;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 38%;
+  left: 40%;
   z-index: 2;
+  box-sizing: border-box;
+}
+
+#cloud4-paper-airplane-container {
+  position: relative;
+  max-width: 25vw;
+  max-height: 30vh;
+  top: -3.6vh;
+  left: 38.7vw;
+}
+
+.paper {
+  max-width: 10vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 20;
+}
+
+.paper-animation {
+  animation: paperScale 2s forwards ease-in-out;
+}
+
+@keyframes paperScale {
+  0% {
+    max-width: 10vw;
+  }
+  100% {
+    transform: translateX(-32vw) translateY(-2vh);
+    max-width: 44vw;
+    z-index: 20;
+  }
+}
+
+.textOnPaper {
+  position: absolute;
+  z-index: 400;
+  top: 0vh;
+  left: -45vw;
+  width: 37vw;
+  height: 25vh;
+  box-sizing: border-box;
+  color: rgba(29, 29, 29, 0.8); /* Text color */
+  font-size: 1.9rem; /* Adjust text size */
+  text-align: center; /* Center text */
+  font-family: "Lobster Two", sans-serif;
+}
+
+.exitBtn {
+  position: absolute;
+  max-width: 15vw;
+  max-height: 10vh;
+  top: 110%;
+  left: 45%;
+  background-color: #fd3939;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.airplane-container {
+  z-index: 7;
+  top: 25%;
+  left: 27%;
+  max-width: 10vw;
+  max-height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.paper-airplane {
+  position: absolute;
+  z-index: 10;
+  top: 38%;
+  left: 45%;
+  max-width: 10vw;
+}
+
+.airplane-cloud4 {
+  max-width: 10vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 12;
+  cursor: pointer;
+}
+
+.airplane-sticker::before {
+  content: "Åpne papirflyet!";
+  width: 100%;
+  position: absolute;
+  top: -50%;
+  left: 70%;
+  background-color: #f29ed1;
+  padding: 0.4rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 500;
+  font-family: "Open sans", sans-serif;
+  font-weight: 600;
 }
 
 .content {
@@ -46,9 +184,8 @@ body {
 
 .cloud1 {
   max-width: 22vw;
-  position: absolute;
-  top: 8vh;
-  left: 4vw;
+  height: auto;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -70,9 +207,8 @@ body {
 
 .cloud4 {
   max-width: 18vw;
-  top: 25vh;
-  position: absolute;
-  left: 76vw;
+  height: auto;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -85,7 +221,7 @@ body {
 }
 
 #congrats {
-  font-size: 9vh;
+  font-size: 3.5rem;
   color: #2450ec;
   padding-top: 15vh;
   margin-bottom: 2vh;
@@ -95,12 +231,28 @@ body {
   font-family: "Lobster Two", sans-serif;
   font-weight: 700;
   font-style: normal;
-  z-index: 10;
+  z-index: 6;
   position: relative;
+  top: -54vh;
 }
 
 #congrats:hover {
-  color: #ff6600;
+  color: #ff6f10;
+}
+
+#congrats::before {
+  content: "Trykk for konfetti";
+  position: absolute;
+  top: 40%;
+  left: -5%;
+  background-color: #ff6f10;
+  padding: 0.4rem;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  z-index: 50;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
 }
 
 p {
@@ -176,6 +328,22 @@ p {
   left: 5vw;
 }
 
+.balloon-sticker::before {
+  content: "Trykk på ballongene for å slippe dem!";
+  position: relative;
+  top: -90%;
+  left: -35%;
+  background-color: #8abd58;
+  background-color: #c633e4;
+
+  padding: 0.4rem;
+  border-radius: 5px;
+  color: white;
+  z-index: 50;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
 .cursorPointer {
   cursor: pointer;
 }
@@ -239,14 +407,6 @@ p {
   }
 }
 
-.paper-airplane {
-  position: absolute;
-  z-index: 10;
-  top: 38%;
-  left: 45%;
-  max-width: 10vw;
-}
-
 .airplane-animation {
   animation: airplane 2s forwards ease-in-out;
 }
@@ -256,34 +416,9 @@ p {
     transform: translateX(0) translateY(0);
   }
   100% {
-    transform: translateX(34vw) translateY(-6vh);
+    transform: translateX(31vw) translateY(-6vh);
   }
 }
-
-.paper {
-  position: absolute;
-  z-index: 15;
-  top: 32vh;
-  left: 80vw;
-  transform: translate(-50%, -50%);
-  max-width: 20vw;
-}
-
-.paper-animation {
-  animation: paperScale 2s forwards ease-in-out;
-}
-
-@keyframes paperScale {
-  0% {
-    transform: translateX(0) translateY(0);
-    max-width: 5vw;
-  }
-  100% {
-    transform: translateX(-50vw) translateY(-20vh);
-    max-width: 40vw;
-  }
-}
-
 
 /* CodePen */
 

@@ -1,40 +1,40 @@
-// window.onload = function () {
-//   var merrywrap = document.getElementById("merrywrap");
-//   var box = merrywrap.getElementsByClassName("giftbox")[0];
-//   var step = 1;
-//   var stepMinutes = [1500, 1500, 750, 750];
+window.onload = function () {
+  var merrywrap = document.getElementById("merrywrap");
+  var box = merrywrap.getElementsByClassName("giftbox")[0];
+  var step = 1;
+  var stepMinutes = [1500, 1500, 750, 750];
 
-//   function init() {
-//     box.addEventListener("click", openBox, false);
-//   }
+  function init() {
+    box.addEventListener("click", openBox, false);
+  }
 
-//   function stepClass(step) {
-//     merrywrap.className = "merrywrap";
-//     merrywrap.className = "merrywrap step-" + step;
-//   }
+  function stepClass(step) {
+    merrywrap.className = "merrywrap";
+    merrywrap.className = "merrywrap step-" + step;
+  }
 
-//   function openBox() {
-//     if (step === 1) {
-//       box.removeEventListener("click", openBox, false);
-//     }
+  function openBox() {
+    if (step === 1) {
+      box.removeEventListener("click", openBox, false);
+    }
 
-//     stepClass(step);
+    stepClass(step);
 
-//     if (step === 3) {
-//     }
+    if (step === 3) {
+    }
 
-//     if (step === 4) {
-//       document.querySelector(".container").style.display = "flex";
-//       merrywrap.style.display = "none";
-//       return;
-//     }
+    if (step === 4) {
+      document.querySelector(".container").style.display = "flex";
+      merrywrap.style.display = "none";
+      return;
+    }
 
-//     setTimeout(openBox, stepMinutes[step - 1]);
-//     step++;
-//   }
+    setTimeout(openBox, stepMinutes[step - 1]);
+    step++;
+  }
 
-//   init();
-// };
+  init();
+};
 
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
@@ -53,10 +53,14 @@ function togglePlayPause() {
     myAudio.play();
     playIcon.classList.remove("cursorPointer");
     pauseIcon.classList.add("cursorPointer");
+    playIcon.style.color = "red";
+    pauseIcon.style.color = "black";
   } else {
     myAudio.pause();
     pauseIcon.classList.remove("cursorPointer");
     playIcon.classList.add("cursorPointer");
+    pauseIcon.style.color = "red";
+    playIcon.style.color = "black";
   }
 }
 
@@ -83,6 +87,11 @@ function textOnCreatedClouds(cloud) {
       cloudImg,
       cloud1AudioContainer.firstChild
     );
+  } else if (cloud == "cloud4") {
+    var cloud4Container = document.getElementById(
+      "cloud4-paper-airplane-container"
+    );
+    cloud4Container.appendChild(cloudImg);
   } else {
     var contentContainer = document.querySelector(".content");
     contentContainer.insertBefore(cloudImg, contentContainer.firstChild);
@@ -115,8 +124,10 @@ function flyBalloon() {
 
   balloonCounter++;
 
-  if (balloonCounter == 2) {
+  if (balloonCounter == 3) {
     displayNumber(balloonCounter);
+    var balloonContainer = document.querySelector("#balloon-container");
+    balloonContainer.classList.remove("balloon-sticker");
     setTimeout(function () {
       getAirplane();
     }, 1800);
@@ -125,14 +136,42 @@ function flyBalloon() {
   }
 }
 
+var birthdayMessage =
+  "Gratulerer med dagen, Malin 🎉 \n Jeg sender deg et Steam-gavekort senere, \n så du kan lage enda flere spillvideoer!";
+
+function showTextOnPaper(paper) {
+  var textDiv = document.createElement("div");
+  textDiv.innerText = birthdayMessage;
+  textDiv.classList.add("textOnPaper");
+
+  var airplaneContainer = document.querySelector(".airplane-container");
+
+  var exitBtn = document.createElement("button");
+  exitBtn.textContent = "Lukk brevet";
+  exitBtn.classList.add("exitBtn");
+  exitBtn.addEventListener("click", function () {
+    airplaneContainer.removeChild(paper);
+    airplaneContainer.removeChild(textDiv);
+  });
+
+  textDiv.appendChild(exitBtn);
+
+  airplaneContainer.insertBefore(textDiv, airplaneContainer.firstChild);
+}
+
 function openAirplane() {
   this.remove();
+  var airplaneContainer = document.querySelector(".airplane-container");
+  airplaneContainer.classList.remove("airplane-sticker");
   var paper = document.createElement("img");
   paper.src = "/img/paper.png";
   paper.classList.add("paper");
   paper.classList.add("paper-animation");
-  var contentContainer = document.querySelector(".content");
-  contentContainer.appendChild(paper);
+  airplaneContainer.appendChild(paper);
+
+  setTimeout(function () {
+    showTextOnPaper(paper);
+  }, 2500);
 }
 
 function getAirplane() {
@@ -149,12 +188,34 @@ function getAirplane() {
   airplane.classList.add("paper-airplane");
 
   var contentContainer = document.querySelector(".content");
+
   contentContainer.appendChild(airplane);
 
   setTimeout(function () {
     airplane.classList.add("airplane-animation");
     airplane.classList.add("cursorPointer");
-    airplane.addEventListener("click", openAirplane);
+
+    setTimeout(function () {
+      contentContainer.removeChild(airplane);
+
+      var airplaneContainer = document.createElement("div");
+      airplaneContainer.classList.add("airplane-container");
+
+      var cloud4Container = document.querySelector(
+        "#cloud4-paper-airplane-container"
+      );
+
+      cloud4Container.appendChild(airplaneContainer);
+      var newAirplane = document.createElement("img");
+      newAirplane.src = "/img/paperplane.png";
+
+      airplaneContainer.appendChild(newAirplane);
+
+      newAirplane.classList.add("airplane-cloud4");
+      airplaneContainer.classList.add("airplane-sticker");
+
+      newAirplane.addEventListener("click", openAirplane);
+    }, 2000);
   }, 1000);
 }
 
@@ -201,9 +262,11 @@ function displayNumber(balloonCounter) {
 function populateBalloons() {
   var balloonContainer = document.getElementById("balloon-container");
   var containerWidth = 90;
-  var numberOfBalloons = 2;
+  var numberOfBalloons = 25;
   var balloonWidth = 5;
-  var spreadBalloons = 1;
+  var spreadBalloons = 13;
+
+  balloonContainer.classList.add("balloon-sticker");
 
   var roomForEachBalloon =
     (containerWidth - balloonWidth * spreadBalloons) / (spreadBalloons + 1);

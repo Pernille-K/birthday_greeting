@@ -2,37 +2,40 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hei hva er det som skjer</title>
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/35aab49604.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
   <body>
-     <!-- <div id="merrywrap" class="merrywrap">
+     <div id="merrywrap" class="merrywrap">
       <div class="giftbox">
         <div class="cover">
           <div></div>
         </div>
         <div class="box"></div>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="container" style = "display: none;"> -->
-      <div class="container">
+    <div class="container" style = "display: none;">
+      <!-- <div class="container"> -->
       <div class="content">
         <div id="cloud1-audio-container">
-
           <div id="audio-container">
           <audio id="myAudio">
             <source src="birthday_song.mp3" type="audio/mp3" />
           </audio>
-          <p id="audio-title">Spill bursdagssang</p>
-          <img id="playIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/play_button.png"></img>
-          <img id="pauseIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/pause_button.png"></img>
+          <!-- <p id="audio-title">Spill bursdagssang</p> -->
+          <i id="playIcon" class="cursorPointer fa-solid fa-play" onclick="togglePlayPause()"></i>
+          <!-- <img id="playIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/play-solid.svg"></img> -->
+          <i class="fa-solid fa-pause cursorPointer" id="pauseIcon" onclick="togglePlayPause()"></i>
+          <!-- <img id="pauseIcon" class="cursorPointer" onclick="togglePlayPause()" src="/img/pause-solid.svg"></img> -->
           </div>
         </div>
+        <div id="cloud4-paper-airplane-container"></div>
 
         <header>
           <h1
