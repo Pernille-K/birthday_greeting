@@ -104,7 +104,6 @@ let numberElement = null;
 let isBalloonFloating = false;
 
 function flyBalloon() {
-  console.log(balloonCounter);
   var balloon = this;
 
   if (isBalloonFloating) {
@@ -132,7 +131,7 @@ function flyBalloon() {
     balloonContainer.classList.remove("balloon-sticker");
     setTimeout(function () {
       getAirplane();
-    }, 1800);
+    }, 1200);
   } else {
     displayNumber(balloonCounter);
   }
@@ -238,9 +237,7 @@ function getAirplane() {
 }
 
 function displayNumber(balloonCounter) {
-  console.log("inni display number");
   if (!numberElement) {
-    console.log("ingen number element");
     numberElement = document.createElement("p");
     glitterImg = document.createElement("img");
     glitterImg.src = "./img/glitterrays.png";

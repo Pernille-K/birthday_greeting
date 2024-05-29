@@ -332,7 +332,7 @@ p {
 }
 
 .float-animation {
-  animation: floatUp 1.2s forwards linear;
+  animation: floatUp 1s forwards linear;
 }
 
 @keyframes floatUp {
