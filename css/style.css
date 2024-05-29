@@ -3,6 +3,7 @@ body {
   margin: 0;
   height: 100%;
   padding: 0;
+  user-select: none;
 }
 
 .container {
@@ -130,6 +131,7 @@ body {
   font-size: 1.9rem; /* Adjust text size */
   text-align: center; /* Center text */
   font-family: "Lobster Two", sans-serif;
+  user-select: none;
 }
 
 .exitBtn {
@@ -273,6 +275,7 @@ body {
   z-index: 6;
   position: relative;
   top: -54vh;
+  user-select: none;
 }
 
 #congrats:hover {
