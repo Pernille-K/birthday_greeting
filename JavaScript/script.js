@@ -1,3 +1,5 @@
+let balloonCounter = 0;
+
 window.onload = function () {
   var merrywrap = document.getElementById("merrywrap");
   var box = merrywrap.getElementsByClassName("giftbox")[0];
@@ -34,7 +36,6 @@ window.onload = function () {
   }
 
   init();
-  let balloonCounter = 0;
 
   populateBalloons();
   textOnCreatedClouds("cloud1");
