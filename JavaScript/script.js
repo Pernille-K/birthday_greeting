@@ -36,15 +36,6 @@ window.onload = function () {
   init();
 };
 
-let balloonCounter = 0;
-
-populateBalloons();
-textOnCreatedClouds("cloud1");
-textOnCreatedClouds("cloud2");
-textOnCreatedClouds("cloud3");
-textOnCreatedClouds("cloud4");
-textOnCreatedClouds("cloud5");
-
 var myAudio = document.getElementById("myAudio");
 var playIcon = document.getElementById("playIcon");
 var pauseIcon = document.getElementById("pauseIcon");
@@ -333,6 +324,15 @@ function populateBalloons() {
     balloonContainer.appendChild(balloon);
   }
 }
+
+let balloonCounter = 0;
+
+populateBalloons();
+textOnCreatedClouds("cloud1");
+textOnCreatedClouds("cloud2");
+textOnCreatedClouds("cloud3");
+textOnCreatedClouds("cloud4");
+textOnCreatedClouds("cloud5");
 
 // function populateBalloons() {
 //   var balloonContainer = document.getElementById("balloon-container");
