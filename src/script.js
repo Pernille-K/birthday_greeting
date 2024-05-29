@@ -126,7 +126,7 @@ function flyBalloon() {
 
   balloonCounter++;
 
-  if (balloonCounter == 3) {
+  if (balloonCounter == 25) {
     displayNumber(balloonCounter);
     var balloonContainer = document.querySelector("#balloon-container");
     balloonContainer.classList.remove("balloon-sticker");
