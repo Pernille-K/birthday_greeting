@@ -190,6 +190,7 @@ function getAirplane() {
   airplane.classList.add("paper-airplane");
 
   var contentContainer = document.querySelector(".content");
+  document.querySelector("#balloon-container").textContent = "";
 
   contentContainer.appendChild(airplane);
 

@@ -136,8 +136,9 @@ body {
   position: absolute;
   max-width: 15vw;
   max-height: 10vh;
-  top: 110%;
-  left: 45%;
+  top: 30vh;
+  left: 11vw;
+  transform: translate(50%, 50%);
   background-color: #fd3939;
   color: white;
   padding: 0.4rem;
