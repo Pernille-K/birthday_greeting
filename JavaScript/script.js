@@ -51,11 +51,11 @@ var playBtn = document.getElementById("playBtn");
 var pauseBtn = document.getElementById("pauseBtn");
 
 var balloonSrcList = [
-  "/img/red.png",
-  "/img/blue.png",
-  "/img/yellow.png",
-  "/img/green.png",
-  "/img/purple.png",
+  "./img/red.png",
+  "./img/blue.png",
+  "./img/yellow.png",
+  "./img/green.png",
+  "./img/purple.png",
 ];
 
 function togglePlayPause() {
@@ -87,7 +87,7 @@ function textOnCreatedClouds(cloud) {
   // cloudImg.classList.add("cloud-img");
   cloudImg.classList.add(`${cloud}`);
 
-  cloudImg.src = `/img/${cloud}.png`;
+  cloudImg.src = `./img/${cloud}.png`;
 
   if (cloud == "cloud1") {
     var cloud1AudioContainer = document.getElementById(
@@ -185,7 +185,7 @@ function openAirplane() {
   var airplaneContainer = document.querySelector(".airplane-container");
   airplaneContainer.classList.remove("airplane-sticker");
   var paper = document.createElement("img");
-  paper.src = "/img/paper.png";
+  paper.src = "./img/paper.png";
   paper.classList.add("paper");
   paper.classList.add("paper-animation");
   airplaneContainer.appendChild(paper);
@@ -205,7 +205,7 @@ function getAirplane() {
   }
 
   var airplane = document.createElement("img");
-  airplane.src = "/img/paperplane.png";
+  airplane.src = "./img/paperplane.png";
   airplane.classList.add("paper-airplane");
 
   var contentContainer = document.querySelector(".content");
@@ -251,7 +251,7 @@ function displayNumber(balloonCounter) {
     console.log("ingen number element");
     numberElement = document.createElement("p");
     glitterImg = document.createElement("img");
-    glitterImg.src = "/img/glitterrays.png";
+    glitterImg.src = "./img/glitterrays.png";
     numberElement.classList.add("number-appears");
     numberElement.classList.add("glittering-number-animation");
 
